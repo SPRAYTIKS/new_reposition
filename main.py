@@ -1,7 +1,7 @@
 import sys
 
 from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
 from PyQt6.QtGui import QPainter, QColor
 import random
 
@@ -9,7 +9,9 @@ import random
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setGeometry(100, 100, 400, 400)
+        self.pushButton = QPushButton('НАЖМИ', self)
+        self.pushButton.move(150, 300)
         self.flag = False
         self.pushButton.clicked.connect(self.draw_flag)
 
